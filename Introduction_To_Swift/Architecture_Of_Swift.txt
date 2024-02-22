@@ -1,0 +1,60 @@
+
+ARCHITECTURE OF SWIFT 
+---------------------
+
+print("Hello, World!")  // 'print()' function outputs "Hello, World!" in the console/terminal.
+
+Note : The angular brackets '>' are used to denote a line in a terminal, they are not a part of swift code.
+
+How to write code?
+1. A complete swift command is a statement. 
+2. Write one statemet in one line
+    Example - > print("Hello")  //  First line
+              > print("World!)  //  Second line
+3. If we combine more than one statement in a line, then we have to put a semicolon(;) between the 2 satements.
+    Example - print("Hello, World!"); print("Hello, World")
+4. Putting a semicolon(;)  at the end of each statement is not necessary.
+
+||||||||||||||||
+--- COMMENTS ---
+||||||||||||||||
+
+1. Anything, written after //, or between /* */ is a comment, i.e the rest of the code is not effected by a comment. Programmers usually use comments to elaborate their code or to take notes.
+  Example -  > print("Hello, World!) // This is a single line comment.
+             > /*
+             >  This is a multi-line comment
+             > */
+
+
+How to write code? Continued.
+
+5. A single statement can be broken into multiple lines in order to prevent them from becoming long lines. This is for the purpose of neat and clean code.
+  Example - 
+            > // Complete statement in one line
+            > for i in range{ print(i) } 
+            >
+            > // For loop statement in multiple lines
+            > for i in range {
+            >     print(i)
+            > }
+
+6. In most coding languages, curly braces are used as delimiters .i.e used for seperation. It is conventional to give a line break after curly braces and, put an indentation (spaces or tabs) for code clarity.
+  Example - 
+            > for i in range { // line breaks here
+            > ---- print("Hello")  // Here, (----) before print() function represents indentation
+            > }
+
+7. XCode will automatically impose these conventions but a Swift code doesn't care about line breaks and indentations. For Swift the following code is also acceptable :
+            > for i in range{ print(i) }
+
+
+
+|||||||||||||||||||
+--- COMPILATION ---
+|||||||||||||||||||
+
+Swift is a compiled language. 
+
+Code text file is firstly passed through a compiler, and then converted into a low-level language that the computer can understand.
+A code must build before its actually run. The compiler checks for errors in the code and if it encounters any error a prompt is thrown to fix it before running the code.
+
