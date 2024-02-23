@@ -1,10 +1,10 @@
-
+|||||||||||||||||||||
 ARCHITECTURE OF SWIFT 
 ---------------------
 
-print("Hello, World!")  // 'print()' function outputs "Hello, World!" in the console/terminal.
+print("Hello, World!")  // The print() function outputs "Hello, World!" in the console/terminal.
 
-Note : The angular brackets '>' are used to denote a line in a terminal, they are not a part of swift code.
+Note : The angular brackets '>' in the following examples of this chapter are used to denote a line in a terminal, they are not a part of swift code.
 
 How to write code?
 1. A complete swift command is a statement. 
@@ -56,5 +56,61 @@ How to write code? Continued.
 Swift is a compiled language. 
 
 Code text file is firstly passed through a compiler, and then converted into a low-level language that the computer can understand.
-A code must build before its actually run. The compiler checks for errors in the code and if it encounters any error a prompt is thrown to fix it before running the code.
+A code must build before its actually run. The compiler checks for errors in the code and if it encounters any, an error prompt is thrown to fix it before running the code.
+
+
+
+||||||||||||||||||||||||
+--- Objects in Swift ---
+||||||||||||||||||||||||
+
+In Swift everything is an object. An object is a basic entity/data field that actually exits in the memory. An object is based on a blueprint/template that has 
+attributes and behaviours(variables and functions) defined as a class.
+
+   > // Blueprint
+   > class Car{
+   >     var speed = 120
+   >     func start(){
+   >         print("Vroooom!")
+   >     }
+   > }    
+   > // Object
+   > var ferrari = Car()
+   
+
+For example, an object is a data field that has properties and behaviours. We can access the properties of an object by using dot-notation.
+Example - 
+        > Car.speed    // Accessing properties
+        > Car.start()  // Calling behaviours
+
+Characteristics of an object 
+----------------------------
+
+1. Identity: Every object must have a different identity from the other, known as the object’s name. No two object must have the same name. An identity is basically an objects address in the memory.
+2. State: If there are some properties of a class, that is designed to be derived in an object, it must have some values to get initiated (usually done with the help of constructors).
+3. Behaviour: Now since the object have a name and some properties, it must have some purpose as well. So these purposes are defined with help of functions (processes) and are known as behaviours.
+
+
+*** Let's start by stipulating that an object is something that we can send messages to. A message is roughly speaking an instruction. 
+
+Example -  We can give instructions to a car for starting the engine, moving forward, break, etc. Here, car acts as an object.
+
+*** The idea of everything being an object is a way of suggesting that even "primitive" linguistic entities can be sent messages. 
+
+Example - 
+            1 is nothing just a digit and no more. It's surprising to find that 1             can be followed by a dot and a message in Swift.
+
+          > let d = 1.description
+
+Another example - 
+          > let sum = 1 + 2;
+        The above line of code is nothing but a trickery. It just says that 1 is an object and, + is a message, but a message of special type(operator syntax).
+
+*** ---- In Swift, every noun is an object and every verb is a message. ---- ***
+
+
+
+
+
+
 
