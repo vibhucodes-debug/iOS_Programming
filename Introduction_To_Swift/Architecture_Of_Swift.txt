@@ -55,7 +55,7 @@ How to write code? Continued.
 
 Swift is a compiled language. 
 
-Code text file is firstly passed through a compiler, and then converted into a low-level language that the computer can understand.
+Code text file is firstly passed through a compiler, and then converted into a low-level language(0s and 1s) that the computer can understand.
 A code must build before its actually run. The compiler checks for errors in the code and if it encounters any, an error prompt is thrown to fix it before running the code.
 
 
@@ -64,7 +64,7 @@ A code must build before its actually run. The compiler checks for errors in the
 --- Objects in Swift ---
 ||||||||||||||||||||||||
 
-In Swift everything is an object. An object is a basic entity/data field that actually exits in the memory. An object is based on a blueprint/template that has 
+In Swift everything is an object. An object is a basic entity/data field that actually exits in the memory. It is based on a blueprint/template that has 
 attributes and behaviours(variables and functions) defined as a class.
 
    > // Blueprint
@@ -93,7 +93,7 @@ Characteristics of an object
 
 *** Let's start by stipulating that an object is something that we can send messages to. A message is roughly speaking an instruction. 
 
-Example -  We can give instructions to a car for starting the engine, moving forward, break, etc. Here, car acts as an object.
+Example -  We can give instructions to a car for starting the engine, moving forward, appllying breaks, etc. Here, car acts as an object.
 
 *** The idea of everything being an object is a way of suggesting that even "primitive" linguistic entities can be sent messages. 
 
@@ -108,6 +108,18 @@ Another example -
 
 *** ---- In Swift, every noun is an object and every verb is a message. ---- ***
 
+To test whether everything in swift is an object, we can try to modify it. An object type can be extended in Swift, meaning that we can define our own messages on that type. 
+We can change the number type as follows: 
+
+    > extension Int {
+    >    func sayHello() {
+    >        print("Hello, I'm \(self)")
+    >     }
+    > }
+    >
+    > 1.sayHello() // Outputs : "Hello, I'm 1"
+
+In Swift, then, 1 is an object. In some languages, such as Objective-C it clearly is not; it is a "primitive" or scalar built-in data type. In Swift there are no scalar types(primitive); everything is ultimately object types.
 
 
 
