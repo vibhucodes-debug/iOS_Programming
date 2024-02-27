@@ -124,5 +124,75 @@ In Swift, then, 1 is an object. In some languages, such as Objective-C it clearl
 
 
 
+|||||||||||||||||||||||||||||||||||||
+--- THREE FLAVOURS OF OBJECT TYPE ---
+|||||||||||||||||||||||||||||||||||||
 
 
+
+Swift has classes but 1 in swift is not a class or an instance of a class. The type of 1 namely Int is a struct and 1 is an instance of a struct. And, swift has yet another type that we can send messages to, called an Enum.
+
+So swift has three kinds of object type : Classes, Structs and Enums.
+
+Classes are reference types whereas, struct and enums are value types. 
+
+
+|||||||||||||||||
+--- VARIABLES ---
+|||||||||||||||||
+
+A variable is a name of an object. Technically a variable refers to an object, therefore it is an object reference.
+No variable in swift comes implicitly into existence, all variables must be declared.
+
+Declaration is usually accompanied by initialization
+
+    > let one = 1
+    > var two = 2
+    > two = one
+
+The name one, on the right side of the equal sign, is used merely to refer to the value inside the variable one (namely 1); but the name two, on the left side of the equal sign, is used to replace the value inside the variable two. A statement like that, with a variable name on the left side of an equal sign, is called an assignment, and the equal sign is the assignment operator. The equal sign is not an assertion of equality, as it might be in an algebraic formula; it is a command. It means: “Get the value of what’s on the right side of me, and use it to replace the value of what’s on the left side of me.”
+
+----- LET AND VAR -----
+-----------------------
+
+    > let one = 1   // A variable declared with let stays constant
+    > var two = 2     
+    > one = two     // Throws compiler error
+
+----- Type of a variable ----
+-----------------------------
+
+This type is established when the variable is declared and can never change.
+
+    > var two = 2
+    > two = "hello"  // Compiler error
+
+*** Variables have a lifetime of their own. As long as a variable exists, it keeps its value alive. Thus a variable can be not only used to name something, but also, a way of preserving it. 
+
+
+
+|||||||||||||||||
+--- FUNCTIONS ---
+|||||||||||||||||
+
+In general executable code lives inside the body of a function A function can be described as a block of code that can be called by its name to perform a certain task, it is designed to perform.
+
+Function declaration : 
+        > func go(){
+        >     print("Hello, world!")
+        > }
+        > go() // Calling a function by its name + parenthesis at the end
+
+A function doesn't run own its own it needs to be called.
+
+That is a command to the go function that it should actually run. But again, that com‐ mand is itself executable code, so it cannot live on its own either. It might live in the body of a different function:
+   > func doGo() {
+   >     go()
+   > }
+
+That, too, is just a function declaration; to run it, someone must call doGo by saying doGo(). And that too, must live inside the body of another function, right? All this is becoming like some kind of  infinite regression.
+In real life fortunately this problem doest arise. Eventually we have to create an iOS app that will be run on an iOS device(or Simulator) by a runtime that already wants to call certain functions. 
+
+
+
+    
