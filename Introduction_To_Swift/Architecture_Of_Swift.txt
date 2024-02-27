@@ -193,6 +193,41 @@ That is a command to the go function that it should actually run. But again, tha
 That, too, is just a function declaration; to run it, someone must call doGo by saying doGo(). And that too, must live inside the body of another function, right? All this is becoming like some kind of  infinite regression.
 In real life fortunately this problem doest arise. Eventually we have to create an iOS app that will be run on an iOS device(or Simulator) by a runtime that already wants to call certain functions. 
 
+Swift also has a special rule that a file called main.swift, exceptionally, can have executable code at its top level, outside any function body, and this is the code that actually runs when the program runs. 
+
+
+|||||||||||||||||||||||||||||||||
+--- Structure of a Swift file ---
+|||||||||||||||||||||||||||||||||
+
+A Swift program consists of one or more files. In Swift, a file is a meaningful unit, and there are definite rules about the structure of the Swift code that can go inside it.
+
+Only certain things can go at the top level of a Swift file. Which are :
+
+    Module import satements: A module is an even higher-level unit than a swift fil. A module can consist of multiple         files, and these files can see eachother automatically. On the other hand, a module cannot see another module          without an import statement.
+
+    Variable declarations: A variable declared at the top level of a file is a global variable. All code will be able         to see and access it, without explicitly sending a message to any object, and it lives as long as the program          runs.
+    Function declarations: A function declared at the top level of a file is a global function. All code will be able          to call it, without explicitly sending messages to any object.
+
+    Object type declarations: The declarations for a class, struct or enum.
+
+        import UIKit
+        var one = 1
+        func changeOne() {
+        }
+        class Manny {
+        }
+        struct Mo{
+        }
+        enum Jack{
+        }
+
+NOTE : We never say that executalbe code can go on the top of a file.
+
+
+
+
+
 
 
     
