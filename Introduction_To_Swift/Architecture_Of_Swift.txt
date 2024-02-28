@@ -204,10 +204,11 @@ A Swift program consists of one or more files. In Swift, a file is a meaningful 
 
 Only certain things can go at the top level of a Swift file. Which are :
 
-    Module import satements: A module is an even higher-level unit than a swift fil. A module can consist of multiple         files, and these files can see eachother automatically. On the other hand, a module cannot see another module          without an import statement.
+    * Module import satements: A module is an even higher-level unit than a swift fil. A module can consist of multiple files, and these files can see eachother automatically. On the other hand, a module cannot see another module without an import statement.
 
-    Variable declarations: A variable declared at the top level of a file is a global variable. All code will be able         to see and access it, without explicitly sending a message to any object, and it lives as long as the program          runs.
-    Function declarations: A function declared at the top level of a file is a global function. All code will be able          to call it, without explicitly sending messages to any object.
+    * Variable declarations: A variable declared at the top level of a file is a global variable. All code will be able to see and access it, without explicitly sending a message to any object, and it lives as long as the program runs.
+
+    * Function declarations: A function declared at the top level of a file is a global function. All code will be able to call it, without explicitly sending messages to any object.
 
     Object type declarations: The declarations for a class, struct or enum.
 
@@ -225,6 +226,116 @@ Only certain things can go at the top level of a Swift file. Which are :
 NOTE : We never say that executalbe code can go on the top of a file.
 
 
+Example of a valid Swift file structure : 
+
+    import UIKit
+    var one = 1
+    func changeOne(){
+        print(one)    // function changeOne has access to variable 'one' that is from a higher level
+    }
+    class Many{
+
+    }
+
+The curly braces of each of the things in that example can all have variable declarations ,function declarations, and object type declarations within them.
+
+We never say that executable code can go on the top of a file. *** Only a funciton body can contain executable code. 
+A statement like one = two or print("Hello) can't got at the top of a file.
+
+    > var one = 1      // executable code can't go here
+    > func changeOne(){
+    >     let two = 2  // executable code
+    >     one = two   // executable code
+    > }
+
+Executable code also can't got directly inside the curly braces that accompany a class declaration. Because it is top level of a class body, not a function body. But a class declaration can contain a function declaration and that function declaration can have executable code.
+
+        class Example{
+            let name = "Vaibhav"   // executable code can't go here
+            func sayName() {
+                print(name)   // executable code
+            }
+        }
+
+
+Another Example of a legal Swift file : 
+
+    import UIKit 
+    var one = 1
+    func changeOne() {
+        let two = 2
+        func sayTwo() {
+            print(two)
+        }
+        class Klass {}
+        struct Struct {}
+        enum Enum {}
+        one = two                
+    }
+    class Moye {
+        let name = "Moye moye"
+        func sayName(){
+            print(name)
+        }
+        class Klass {}
+        struct Struct {}
+        enum Enum {}
+    }
+    struct Youtube {
+        let name = "Youtube"
+        func sayName(){
+            print(name)
+        }
+        class Klass {}
+        struct Struct {}
+        enum Enum {}
+    }
+    enum Jack {
+        var name : String {
+            return "Jack"
+        }
+        func sayName() {
+            print(name)
+        }
+        class Klass {}
+        struct Struct {}
+        enum Enum {}
+    }
+
+
+
+||||||||||||||||||||||||||
+--- Scope and Lifetime ---
+||||||||||||||||||||||||||
+
+
+In Swift program, things have a scope. This refers to their ability to be seen by other things. These things are nested inside of other things forming a hierarchy of things. The rule is that things can see things at their own level and at a heigher level containing them.
+
+    *  A module is a scope
+    *  A file is a scope 
+    *  Curly braces are a scope
+
+Inside the declaration of Moye in previous example name is a varaible declaration and sayName is a function declaration. The code inside sayName's curly braces can see code outside those curly braces at a higher containing level. And, can therefore see the name variable.
+
+The code inside the body of the changeOne function can see the one variable declared at the top level of the file. Indeed, everything throughout this file can see the one variable declared at the top level of the file.
+
+* Scope is thus a very important part for sharing information.
+    
+
+Things also have a lifetime, which is effectively equivalent to their scope. A thing lives as long as its surrounding scope lives. 
+Variable one lives as long as the file lives - namely, as long as the program runs. 
+But, the variable name declared at the top of Moye class exists as long as the instance of Moye exists.
+
+
+* Things declared at a deeper level live even shorter lifetimes. 
+
+full silly() {
+    if true {
+         class Cat {}
+         var one = 1
+         one = one + 1
+    }
+}
 
 
 
