@@ -1,1 +1,19 @@
 
+|||||||||||||||||||||||||||||||
+---- APPLICATION LIFE CYCLE ---
+|||||||||||||||||||||||||||||||
+
+
+* The application life cycle constitutes of the sequence of events that occurs between the launch and termination of the application.
+
+
+
+--- Steps involved from device reboot to app launch ---
+-------------------------------------------------------
+
+When user turn on the phone no apps are running except app which belong to the OS. When user tap on your app in icon, Spring Board launches your app.
+
+* SpringBoard is the standard application that manages the iPhone's home screen. Other tasks include starting WindowServer, launcing and bootstrapping applications and setting some of the device's setting on startup.
+
+
+
