@@ -351,7 +351,34 @@ class Moye {
     }
 }
 
-* name is a variable declared at the top level of the class, so it is called a Class property 
+* name is a variable declared at the top level of the class, so it is called a Class property of that object.
+* sayName is a function declared at the top level of an object declaration, so it is called a method of that object.
+
+Things declared tat the top level of an object declaration - properties, methods and any objects declared at that level - are collectively the members of that object. Mebers have a special significance, because they define the messages you are allowed to send to that object!
+
+
+
+||||||||||||||||||
+--- NAMESPACES ---
+||||||||||||||||||
+
+A namespace is a named region of that program. The names of thins inside a name-space cannot be reached by things outside it without somehow first passing through the barrier of saying that region's name. 
+Clearly, namespace and scopes are closely related notations. Moye is a namespace 
+
+    class Moye {
+        class Klass {}
+    }
+
+    class Manny {
+        class Klass {}
+    }
+
+Class Manny and Moye have classes with same names declared inside of them but both are not effected because they are declared in different namespaces. Moye is a namespace, and Klass is declared inside of it. Any code inside of Moye, and at the same level as Klass can see Klass, but anything outside of Moye can't see Klass. To access class it first has to call Moye by its name and then use dot notation to call Klass.
+
+    > Moye.Klass
+
+
+
 
 
     
