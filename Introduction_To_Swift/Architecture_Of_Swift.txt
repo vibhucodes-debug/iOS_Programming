@@ -337,8 +337,21 @@ full silly() {
     }
 }
 
+The class Cat and the variable one will not even come into existence until someone calls the silly function, and even then they will exist only during the breif instant that the path of code execution passes through the if construct. 
+On executing the code, the path of execution follows as shown below :
+    Calling function 'silly'  - > If Construct - > Cat is declared and comes into existence - > One is declared - > execution of one = one + 1 -> End of scope - > Cat and one vanish  
 
 
+\\\\ OBJECT MEMBERS ////
+
+class Moye {
+    let name = "Moye"
+    func sayName(){
+        print(name)
+    }
+}
+
+* name is a variable declared at the top level of the class, so it is called a Class property 
 
 
     
