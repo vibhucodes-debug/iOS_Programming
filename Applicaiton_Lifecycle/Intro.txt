@@ -48,13 +48,13 @@ Flow of app life cycle from launch to suspended states :-
             |
   2. Main() & UIApplicationMain() & Load main UI File
             |
-  3. First initialization & Restore UI state
+  3. First initialization & Restore UI state     --------------------      willFinishLaunchingWithOptions and runs Various methods
             |
-  4. Final initialization
+  4. Final initialization                        --------------------      didFinishLaunchingWithOptions
             |
-  5. Active app(running)
+  5. Active app(running)                         --------------------      applicationDidBecomeActive
             |
-      | Event Loop |       
+      | Event Loop |                             --------------------      Handle event
             |
       Switch to different app
 (Moving our app from foreground to background)
