@@ -1,1 +1,31 @@
 
+UI Label 
+
+A view that displays one or more lines of informational text.
+
+@MainActor 
+class UILabel : UIView
+
+
+UILabel is a fundamental component of the UIKit framework, and it's the goto control for displaying static text in ioS applications.
+
+
+--- Accessing the TEXT ---
+
+>> var text: String?
+
+This is the property used to set the text that the UILabel will display. 
+
+  label.text = "Hello, world!"
+
+>> var attributedText:NSAttributedString?
+
+AttributedText offers a finer level of control over the label's text styling compared to the basic text property. It allows us to style differenct parts of the UILabel's text differently, like making a word bold or coloring a sentence.
+
+>> var font:UIFont!
+
+label.font = UIFont.systemFont(ofSize: 20)       // Font sizing
+label.font = UIFont.boldSystemFont(ofSize: 20)   // Bold font
+label.font = UIFont.italicSystemFont(ofSize: 20) // Italic font
+
+
