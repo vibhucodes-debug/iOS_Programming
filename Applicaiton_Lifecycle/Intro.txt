@@ -58,6 +58,37 @@ Flow of app life cycle from launch to suspended states :-
             |
       Switch to different app
 (Moving our app from foreground to background)
+            |
+Deactivate the app(Foreground)                   --------------------      applicationWillResignActive
+            |
+      Enter Background                           --------------------      applicationDidEnterBackground
+            |
+
+       Allowed to run?
+          |      |
+         No      Yes
+          |      |
+          |     Monitor event                    --------------------      Handle Event
+          |      |   Sleeps when not handling events
+          |      |  
+     App sleeps(suspended state)                -----------     applicationWillTerminate
+                 |
+      --------------------------
+      |                         |
+Switch to this app      Terminate app(memory pressure) 
+
+
+||||||||||||||||||||||||||
+--- The Main Run loop ---
+||||||||||||||||||||||||||
+
+ * An app's main run loop processes all user-related events
+ * App delegate sets up the main run loop at launch time and uses it to process events and handle updates to view-based interfaces.
+ * Main run loop executes on the app's main thread
+ * Main thread is serial thread and this ensures that user-related events are processed serially in the order in which they were received.
+
+
+
 
 
 |||||||||||||||||||
