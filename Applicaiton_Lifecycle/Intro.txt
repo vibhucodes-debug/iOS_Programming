@@ -13,7 +13,56 @@
 
 When user turn on the phone no apps are running except app which belong to the OS. When user tap on your app in icon, Spring Board launches your app.
 
-* SpringBoard is the standard application that manages the iPhone's home screen. Other tasks include starting WindowServer, launcing and bootstrapping applications and setting some of the device's setting on startup.
+* SpringBoard is the standard application that manages the iPhone's home screen. Other tasks include starting WindowServer, launching and bootstrapping applications and setting some of the device's setting on startup.
+
+* When springboard animates and loads an app's launch screen, our app and necessary shared libraries will be loaded into the memory. Eventually our app begins execution and applicaiton delegate receives the notifications.
 
 
+||| App Delegate ||| 
+AppDelegate is the application delegate object. It inherits the UIResponder class and implements the UIApplicationDelegate delegate protocol.
+
+||| UIApplicationDelegate |||
+Main entry into an iOS app is UIApplicationDelegate. It is a protocol and you need to impliment that into your app to get notified about user events such as app launch, app goes into background or foreground, app is terminated, a push notification was opened etc.
+
+||| UI Responder ||| 
+UIResponder class makes AppDelegate have the ability to repond to user events and UIApplicationDelegate enables the AppDelegate to be an application delegate object to manage and respond to the life cycle of the application.
+
+Execution States for an App :
+
+  * Not running state : The app has not been launched or terminated by the system.
+  * Inactive State : The app is entering the foreground state but not receiving events.
+  * Active state : The app enters the foreground state and can process event.
+  * Background state : In this state, if there is any executable code, it will execute and if there is no executable code or the execution is complete, the application will suspend immidiately.
+  * Suspended state : The app is in the background(in memory) but is not executing code and if system does not have enough memeory, it will terminate the app.
+
+
+NOT RUNNING STATE         |          FOREGROUND STATE          |          BACKGROUND             |    SUSPENDED STATE 
+
+                                     1. Inactive state              
+                                     2. Active state
+
+
+Flow of app life cycle from launch to suspended states :-
+
+  1. User taps on app icon
+            |
+  2. Main() & UIApplicationMain() & Load main UI File
+            |
+  3. First initialization & Restore UI state
+            |
+  4. Final initialization
+            |
+  5. Active app(running)
+            |
+      | Event Loop |       
+            |
+      Switch to different app
+(Moving our app from foreground to background)
+
+
+|||||||||||||||||||
+--- REFERENCES ---
+|||||||||||||||||||
+
+https://manasaprema04.medium.com/application-life-cycle-in-ios-f7365d8c1636
 
