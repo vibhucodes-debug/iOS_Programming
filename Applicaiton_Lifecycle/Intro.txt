@@ -89,6 +89,99 @@ Switch to this app      Terminate app(memory pressure)
 
 
 
+----- INTERVIEW QUESTIONS ON APP LIFE CYCLE -----
+
+
+Q. How does a background iOS app gets resumed in foreground?
+
+Ans. When user launches an app that is currently in background, the system moves app to the inactive state and tehn to the active state.
+
+
+        App in Background State               Appdelegate/ Function executes in code
+                    |
+        App relaunched(inactive)       <--->  applicationWillEnterForeground
+                    |
+        App enter foreground(active)   <--->  applicationDidBecomeActive
+
+
+Q. What are the steps involved when app enter to foreground after device rebooted?
+
+Ans. When user launches an app for the first time or after device reboot or after system terminates the app, the system moves app to the active state.
+
+        User taps app icon/app launched first time          Appdelegate/ Function executes in code
+                             |
+                   First initialization           <---->     willFinishLaunchingWithOptions
+                             |
+                   Final initialization           <---->     didFinishLaunchingWithOptions
+                             |
+                App enter foreground(active)      <---->     applicationDidBecomeActive
+
+
+Q. What are the steps involved when app moves from foreground to background?
+
+Ans.  
+             Click on Home button when app in foreground          Appdelegate/ Function executes in code
+                                 |
+                         Deactivate the app               <--->    applicationWillResignActive
+                                 |
+                         App enter Background             <--->    applicationDidEnterBackground
+
+
+Q. How can you opt out background execution?
+
+Ans. 
+              * You can explicitly opt out background execution by adding UIApplicationExitsOnSuspend key to application's Info.plist file and setting its value to 'YES'.
+              * When you opt out background state, app life cycles will be between the not running, inactive, and active states and never enters the background or suspended states.
+
+
+Q. Which is the app state when device is rebooted?
+
+Ans.  Not running state.
+
+
+Q. When app is running but not receiving event. In which state app is in?
+
+Ans. Inactive state.
+
+
+Q. How does an iOS app respond to interrupts like SMS, Incoming call, Calendar, etc?
+
+Ans. Application moves to the inactive state temporarily and it remains in this state until the user decides whether to accept or ignore the interruption. 
+
+     * If the user ignores the interruption, the application is reactivated.
+     * If the user accepts the interruption, the application moves into the suspended state.
+
+     App in foreground
+            |
+    Incoming call or sms or calendar notification         <--->    applicationWillResignActive
+            |
+        Ignore?       <----->   applicationDidBecomeActive
+            |
+    App enters background     <----->    applicationDidEnterBackground
+
+
+Q. What are the uses of background state?
+
+Ans.   * It gives opportunity to save any application data that will help user to relaunch the app where they left.
+       * App release any resources that don't need.
+
+Q. How can you add additional background execution time for your app?
+
+Ans.   * App can stay in background for few seconds and you can execute any code within that time.
+       * You can call beginBackgroundTask(expirationHandler handler: (() -> Void)? = nil) method which requests addtional background execution time for your app.
+       * To extend the execution time of an app extension, use the performExpiringActivity(withReason:using:) method.
+
+
+Q. How can you check maximum amount of time available for app in background?
+
+Ans. backgroundTimeRemaining helps to get maximum amount of time remaining for the app to run in the background. 
+
+The value is valid only after the app enters teh background and has started at least one task using beginBackgroundTask(expirationHandler:) in the foreground.
+
+
+Q. How can you debug your background task?
+
+Ans. beginBackgroundTask(withName:expirationHandler:) for debugging background task.
 
 
 |||||||||||||||||||
