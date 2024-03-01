@@ -18,7 +18,7 @@
 
 ### Creating a View Controller
 
- * Inside the *Main.storyboard* file click the *** + *** button in the top right corner or just press 'cmd+shift+l' and search for UIViewController, and drag and drop the *View controller*
+ * Inside the *Main.storyboard* file click the ***+*** button in the top right corner or just press 'cmd+shift+l' and search for UIViewController, and drag and drop the *View controller*
  * 
 
 
