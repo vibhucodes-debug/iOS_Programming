@@ -2,7 +2,7 @@
 
 # Storyboard
 
-## Steps for creating your first storyboard project in XCode
+### Steps for creating your first storyboard project in XCode
 
   * Open XCode and select *Create new project*
   * Then, under the iOS panel select *App* inside the application section
@@ -11,10 +11,15 @@
   * Now, click next, and choose a location where you want to save your project, and hit create.
 
 
-### Following that, You must encounter an initial screen having General settings related to supported devices and more.
+### Cleaning the Project 
 
-   * Right now we are not creating an app for iPad and other devices, so just remove rest of the devices except iPhone.
-   * Under 'Deployment info' uncheck 'Landscape left' and 'Landscape right', because we won't be optimising the app for landscape orientations.
+ * Inside the Main.storyboard delete the iPhone screen that you see.
+ * Next delete the ViewController.storyboard file from the files menu
+
+### Creating a View Controller
+
+ * Inside the *Main.storyboard* file click the *** + *** button in the top right corner or just press 'cmd+shift+l' and search for UIViewController, and drag and drop the *View controller*
+ * 
 
 
     
