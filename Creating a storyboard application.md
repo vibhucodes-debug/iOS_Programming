@@ -13,6 +13,6 @@ Now, click next, and choose a location where you want to save your project, and 
 
 ### Following that, You must encounter an initial screen having General settings related to supported devices and more.
 
-    * Right now we are not creating an app for iPad and other devices, so just remove rest of the devices except iPhone.
-    * Under 'Deployment info' uncheck 'Landscape left' and 'Landscape right', because we won't be optimising the app for landscape orientations.
+   * Right now we are not creating an app for iPad and other devices, so just remove rest of the devices except iPhone.
+   * Under 'Deployment info' uncheck 'Landscape left' and 'Landscape right', because we won't be optimising the app for landscape orientations.
     
