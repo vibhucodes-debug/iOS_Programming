@@ -11,4 +11,6 @@
 Now, click next, and choose a location where you want to save your project, and hit create.
 
 
+### You must encounter an initial screen having General settings related to supported devices and more.
+
 
