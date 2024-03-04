@@ -8,11 +8,11 @@
 Note: If you select the 'Segue' connecting the Navigation Controller and the ColorsTableVC(Initial view controller) you will see it is 'Root relationship' segue
 
 ### Assigning an Identifier to the Segue
---
+----------------------------------------
   * Select the segue and under the *attributes inspector* give a name in the **Identifier* field.
 
 ### Creating a button and action
---
+--------------------------------
   * Open the view controler in a new window
   * Insert a new button in the ColorsTableVC
   * Drag a segue from the button to the newly opened View controller window. Notice, to end the segue after the ***viewDidLoad*** function.
