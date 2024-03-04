@@ -25,16 +25,5 @@
      * Click the 1st button on the top of View Controller
      * Then, inside the Identity selector, select the Class as *ColorsTableVC*
 
-### Creating a Navigation Controller
-------------------------------------
- * Inside the Main storyboard file Select the *View controller*, then click on the *Editor* option in the top bar Menu of the MacOS
- * Under the *Editor* menu select the *Embed In* option ,and then click on the  *Navigation Controller* option.
-
-
-### Changing Background color of the View Controller
-----------------------------------------------------
- * Move inside the ***Scenes*** menu and select the ***View*** for *ColorsTableVC*
- * After selecting the *View* go to the **Attributes Inspector** and change the **Background** of your choice.
-
 
     
