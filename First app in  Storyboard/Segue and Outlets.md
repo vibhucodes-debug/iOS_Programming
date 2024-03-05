@@ -27,10 +27,12 @@ Note : Ending the segue before the **viewDidLoad** function will create an ***Ou
 
 
 
-NOTE ERROR : *this class is not key value coding-compliant for the key*
+NOTE ERROR : *'this class is not key value coding-compliant for the key'*
  If this error is encountered please check if the button has un-removed references left.
  For that right click on the button, and delete any unnecessary references.
 
+##### Removing an Action
+   * Deleting the **@IBAction** function code from the ViewController file won't fix things, we have to delete the button from ViewController UI or remove references by Right clicking the *button* ,and delete the events attatched with the button.
  
 
  
